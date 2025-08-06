@@ -3,6 +3,8 @@ name: CI_Pipeline
 on:
   pull_request:
     branches: [ master ]
+  push:
+    branches: [ master ]
 
 jobs:
   build:
