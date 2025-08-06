@@ -1,2 +1,2 @@
-v2.0
+v3.0
 New README.md
