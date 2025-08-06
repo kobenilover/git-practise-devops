@@ -1,0 +1,28 @@
+name: CI_Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show status
+        run: git status
+
+      - name: List files
+        run: ls -la
+
+      - name: Check for config file
+        run: |
+          if [ -f "config/app.conf" ]; then
+            echo "✅ config/app.conf найден"
+          else
+            echo "❌ config/app.conf не найден"
+            exit 1
+          fi
